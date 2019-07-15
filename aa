@@ -2,9 +2,9 @@ mkdir -p v/tkn
 mkdir -p v/output
 curl https://raw.githubusercontent.com/saebaxyz/v/master/x.py -o v/x.py
 curl https://raw.githubusercontent.com/saebaxyz/v/master/y.py -o v/y.py
-curl https://raw.githubusercontent.com/saebaxyz/v/master/x. -o x.
-curl https://raw.githubusercontent.com/saebaxyz/v/master/y. -o y.
-curl https://raw.githubusercontent.com/saebaxyz/v/master/bb. -o bb.
+curl https://raw.githubusercontent.com/saebaxyz/v/master/x -o x
+curl https://raw.githubusercontent.com/saebaxyz/v/master/y -o y
+curl https://raw.githubusercontent.com/saebaxyz/v/master/bb -o bb
 chmod +x x
 chmod +x y
 chmod +x bb
