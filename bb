@@ -1,0 +1,1 @@
+rm -rfv aa.sh
