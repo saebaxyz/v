@@ -1,0 +1,5 @@
+chmod +x x
+chmod +x y
+chmod +x bb
+cp ~/v/x ~/
+cp ~/v/y ~/
