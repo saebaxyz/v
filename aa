@@ -1,0 +1,7 @@
+rm -rfv v
+rm -rfv y
+git clone https://github.com/saebaxyz/v.git
+cd v
+chmod +x *
+mv x ~/
+mv y ~/
