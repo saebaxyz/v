@@ -127,10 +127,10 @@ def masuk():
       #open for read only
       with open('output/'+kun[plh - 1]) as fp:
        for cnt, line in enumerate(fp):
-         
-         #search by number-id, of file input
+        try:
          if target in line.split(',')[1] and lockz==1 :
-          lockz=0
+           lockz=0
+         #search by number-id, of file input
          #print("Line {}: {}".format(cnt, line))
          if "yahoo.com" in line.split(',')[0] and lockz==0 :
           if timz == rdm1 : 
@@ -222,7 +222,8 @@ def masuk():
                 print line.strip()
           except KeyError:
             pass
-
+        except:
+         continue
 
       print ' \n'
       print G+bgm + '------------------------------------\n'
