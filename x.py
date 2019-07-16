@@ -911,7 +911,10 @@ def dump_mail():
 	testz=''
 	fileo=''
 	linex=''
-	close.filex()
+	try:
+	  close.filex()
+	except:
+	  pass
 
 
 	print '[*] <to Quit,[CTRL-Z] jika Hang.>'
