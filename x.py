@@ -925,7 +925,7 @@ def dump_mail():
 
 		#a sign means append, + sign means it will create file if not exist.
 		out = open('output/allm_' + n[0].split(' ')[0] +'.txt','a+')
-		out.write('[LANJUTANKAH+]====================');
+		out.write('[LANJUTANKAH+]====================\n');
 		out.close();
 		dlz=random.randrange(40, 55)
 		for i in a['data']:
@@ -1012,29 +1012,36 @@ def dump_mail():
 			except KeyError:
 			    pass;
 		#what if empty?
-		with open("output/ytmp.txt") as inf:
+		try:
+		 with open("output/ytmp.txt") as inf:
 		  dataz = list(csv.reader(inf, delimiter=','))
-		mz = sorted(dataz, key=lambda data_entry: int(data_entry[1]))
-		with open("output/y_" + n[0].split(" ")[0] +"_"+ i['id']+".txt", "w") as outf:
+		 mz = sorted(dataz, key=lambda data_entry: int(data_entry[1]))
+		 with open("output/y_" + n[0].split(" ")[0] +"_"+ i['id']+".txt", "w") as outf:
 		  csv.writer(outf, delimiter=',').writerows(mz)
-		inf.close();
-		outf.close();
-		#what if empty?
-		with open("output/htmp.txt") as inf:
+		 inf.close();
+		 outf.close();
+		 #what if empty?
+		 with open("output/htmp.txt") as inf:
 		  dataz = list(csv.reader(inf, delimiter=','))
-		mz = sorted(dataz, key=lambda data_entry: int(data_entry[1]))
-		with open("output/h_" + n[0].split(" ")[0] +"_"+ i['id']+".txt", "w") as outf:
+		 mz = sorted(dataz, key=lambda data_entry: int(data_entry[1]))
+		 with open("output/h_" + n[0].split(" ")[0] +"_"+ i['id']+".txt", "w") as outf:
 		  csv.writer(outf, delimiter=',').writerows(mz)
-		inf.close();
-		outf.close();
+		 inf.close();
+		 outf.close();
+		except:
+		 pass
                 print '[*] done'
                 print "[*] all emails successfuly retrieved"
 		print '[*] file saved :'
 		print 'Semua Hasil Asli:output/allm_' + n[0].split(' ')[0] +'.txt'
 		print "Yahoo tok:output/y_" + n[0].split(" ")[0] +"_"+ i['id']+".txt"
 		print "Hotmail,Aol,Outlook:output/h_" + n[0].split(" ")[0] +"_"+ i['id']+".txt"
-		os.system('rm -rf output/ytmp.txt')
-		os.system('rm -rf output/htmp.txt')
+		try:
+		 os.system('rm -rf output/ytmp.txt')
+		 os.system('rm -rf output/htmp.txt')
+		except:
+		 pass
+        
 		main()
 
 	except KeyboardInterrupt:
