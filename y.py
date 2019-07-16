@@ -149,6 +149,7 @@ def masuk():
             except:
               mail = line.strip()
             yahoo = re.compile('@.*')
+            print 'coba: '+mail
             try:
               br.open('https://login.yahoo.com/config/login?.src=fpctx&.intl=id&.lang=id-ID&.done=https://id.yahoo.com')
             except urllib2.URLError as e:
@@ -177,10 +178,7 @@ def masuk():
                 print G+bgm + '[vuln+]' + p + line
                 berhasil.append('[vuln+],' +line.strip())
             else:
-                try:
-                  print line.split(',')[0].strip()
-                except:
-                  print line.strip()
+                print 'tidak bisa..'
           except KeyError:
             pass
 
@@ -201,6 +199,7 @@ def masuk():
               mail = line.split(',')[0].strip()
             except:
               mail = line.strip()
+            print 'coba: '+mail
             try:
               url = ("http://apilayer.net/api/check?access_key=7a58ece2d10e54d09e93b71379677dbb&email=" + mail + "&smtp=1&format=1")
               cek = json.loads(requests.get(url).text)
@@ -216,10 +215,7 @@ def masuk():
               print G+bgm + '[vuln+]' + p + line
               berhasil.append('[vuln+],' +line.strip())
             else:
-              try:
-                print line.split(',')[0].strip()
-              except:
-                print line.strip()
+              print 'tidak bisa..'
           except KeyError:
             pass
         except:
