@@ -114,7 +114,10 @@ def masuk():
       #sys.exit()
 
       linex=''
-      close.filex()
+      try:
+        close.filex()
+      except:
+        pass
 
       #create or open file to append
       save = open('output/Vuln'+kun[plh-1][4:], 'a+')
