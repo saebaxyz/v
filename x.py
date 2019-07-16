@@ -892,7 +892,7 @@ def dump_mail():
               #exit for, target='z@@2'. lockz=0 tetap. mulai dari awal
               break            
             try:
-              testz = linex[len(linex)-1-i].split(',')[2].strip()
+              testz = linex[len(linex)-1-i].split(',')[1].strip()
               #print 'dapat:>>'+testz+'<<'
               #print len(linex)-i+1
               
