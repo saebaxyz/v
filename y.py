@@ -69,7 +69,7 @@ def masuk():
     if kun != []:
       #print 'file ada'
       #input nomer =plh
-      plh = input('\n[*]pilih akun no.brapa?(enter=exit): ')
+      plh = input('\n[*]pilih akun no.brapa?(enter=exit): '+W)
       if plh == '' :
         sys.exit()
       
@@ -102,7 +102,7 @@ def masuk():
               
               if testz.isdigit():
                 target = testz
-                print "tadi sampai "+ R +target+".."+G+" Ok,Lanjot.."
+                print "tadi sampai "+ R +target+".."+G+" Ok,Lanjot.."+W
                 lockz=1
                 break
             except:
@@ -163,12 +163,14 @@ def masuk():
               klik = br.submit().read()
               jok = re.compile('"messages.ERROR_INVALID_USERNAME">.*')
             except urllib2.URLError as e:
-              print "URLError................."
+              print "URL Error................."
               continue
 
             try:
                 pek = jok.search(klik).group()
             except:
+                #print 'feedback error..'
+                print 'nop..'
                 continue
             if '"messages.ERROR_INVALID_USERNAME">' in pek:
                 save = open('output/Vuln'+kun[plh-1][4:], 'a+')
