@@ -1,4 +1,0 @@
-min=out$(date +%Y%m%d_%H%M%S);
-termux-setup-storage
-mkdir -p ~/storage/downloads/$min
-cp ~/v/output/*.txt ~/storage/downloads/$min
