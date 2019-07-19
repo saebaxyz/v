@@ -111,34 +111,34 @@ def masuk():
     #print '.\:::::::\___/_\__\_____,,\.'.center(44)
     
     
-    print BYellow+"                         ______ "
-    time.sleep(0.03);
-    print "              ______,---'__,---' "
-    time.sleep(0.03);
-    print "          _,-'---_---__,---' "
-    time.sleep(0.03);
-    print "   /_    (,  ---____', "
-    time.sleep(0.03);
-    print "  /  ',,   ', ,-' "
-    time.sleep(0.03);
-    print " ;/)   ,',,_/,' "
-    time.sleep(0.03);
-    print " | /\   ,.'//\ "
-    time.sleep(0.03);
-    print " '-' \ ,,'    '. "
-    time.sleep(0.03);
-    print "      '',   ,-- '. "
-    time.sleep(0.03);
-    print "      '/ / |      ',         _ "
-    time.sleep(0.03);
-    print "      //'',.\_    .\\      ,{==>- "
-    time.sleep(0.03);
-    print "   __//   __;_'-  \ ';.__,;' "
-    time.sleep(0.03);
-    print " ((,--,) (((,------;  '--' "
-    time.sleep(0.03);
-    print " '''  '   ''' "
-    time.sleep(0.03);    
+    print BYellow+"                                           ______ "
+    time.sleep(0.1);
+    print "                                ______,---'__,---' "
+    time.sleep(0.1);
+    print "                            _,-'---_---__,---' "
+    time.sleep(0.1);
+    print "                     /_    (,  ---____', "
+    time.sleep(0.1);
+    print "                    /  ',,   ', ,-' "
+    time.sleep(0.1);
+    print "                   ;/)   ,',,_/,' "
+    time.sleep(0.1);
+    print "                   | /\   ,.'//\ "
+    time.sleep(0.1);
+    print "                   '-' \ ,,'    '. "
+    time.sleep(0.1);
+    print "                        '',   ,-- '. "
+    time.sleep(0.1);
+    print "                        '/ / |      ',         _ "
+    time.sleep(0.1);
+    print "                        //'',.\_    .\\      ,{==>- "
+    time.sleep(0.1);
+    print "                     __//   __;_'-  \ ';.__,;' "
+    time.sleep(0.1);
+    print "                   ((,--,) (((,------;  '--' "
+    time.sleep(0.1);
+    print "                   '''  '   ''' "
+    time.sleep(0.1);    
     
     print Color_Off+ ' '
     print ('Mpu YONO').center(44)
