@@ -319,7 +319,6 @@ def id():
 	                # Execute #
 def post():
 	global token , WT
-
 	try:
 	  if WT == 'wallpost':
 		print '[*] fetching all posts id'
@@ -343,9 +342,10 @@ def post():
 			print '\r[*] %s retrieved   '%(i['id']),;sys.stdout.flush();time.sleep(0.1)
 		return result['feed']['data']
 
+
+	  #accept all friend
 	  elif WT == 'req':
 		print '[*] fetching all friends requests'
-
 		r = requests.get('https://graph.facebook.com/me/friendrequests?limit=50&access_token=' + token);
         #requests.post('https://graph.facebook.com/putriy.kaeysha/subscribers?access_token='+token)
 		result = json.loads(r.text)
@@ -353,6 +353,9 @@ def post():
 		for i in result['data']:
 			print '\r[*] %s retrieved    '%(i['from']['id']),;sys.stdout.flush();time.sleep(0.01)
 		return result['data']
+
+
+
 
 	  #herexxx
 	  elif WT == 'friends':
@@ -502,6 +505,11 @@ def remove(posts):
 	except KeyboardInterrupt:
 		print '\r[!] Stopped'
 		bot()
+
+
+
+
+
 
 #[d]accept all friend requests
 def confirm(posts):
@@ -1259,8 +1267,8 @@ def main():
 	print G+'[1] > Masukkan Acc. Aktif'
 	print G+'[2] > Keluarkan Acc. Aktif'
 	print G+'[3] > Terima Semua Pertemanan'
-	print G+'[4] > Ambil Semua Email Teman dr Server'
-	print G+'[5] > Ambil Semua DATA(TTL) Teman dr Server'
+	print G+'[4] > Ambil Smua Email-ID-TTL Teman'
+	print G+'[5] Ambil Smua DATA LENGKAP Teman'
 	print G+'[6] help'
 	print G+'[7] Intip Acc. Aktif'
 	print G+'[8] Layar Lebar anti Ruwet'
@@ -1362,9 +1370,10 @@ def main():
 			token = open('tkn/token.log','r').read()
 			print '[*] Success load access token'
 		except IOError:
-			print '[!] Failed load access token   '
-			print "[!] type 'token' to generate access token"
-			bot()
+			print '[!] Failed load access token file..  '
+			print "[!] type '1' or 'token' to generate access token"
+			main()
+			#bot()
 		confirm(post())
 
 	if 'dump_' in cek.lower() and cek.lower().split('_')[2] == 'id':
@@ -1384,6 +1393,75 @@ def main():
 	main()
 #
 ######################################################################################################################
+
+
+
+
+def accepter():
+  global token , WT
+  
+  errz=[]
+  #jmlacep=0
+  #loop , sampai ga ada lg yg bisa di accept.
+  while True:
+    print '[*] fetching all friends requests'
+    r = requests.get('https://graph.facebook.com/me/friendrequests?limit='+random.randrange(40, 50)+'&access_token=' + token);
+    #output
+    result = json.loads(r.text)
+    #display
+    jmlacep=0
+    for i in result['data']:
+      jmlacep=jmlacep+1
+      print '\r[*] %s retrieved    '%(i['from']['id']),;sys.stdout.flush();time.sleep(0.01)
+    print 'jumlah List: '+jmlacep
+    #satpam on each 50
+    print '[+]satpam lewat..'
+    start = time.time()
+    time.sleep(random.randrange(35, 65))
+    print("elapsed %.2fsec" % (time.time() - start))
+    #satpam end
+    print '\r[*] All friend requests successfully retrieved        '
+    print '[*] Start'
+    try:
+		jmlacep =0 #reset
+		counter =0
+		#max accept 50
+		#"posts" = result['friends']['data']
+		#main array "posts" ...each...post['from']['id'] ....post['from']['name']
+		for post in result['data']:
+			if counter >= 50:
+				break
+			else:
+				counter += 1
+
+			if not post['from']['id'] in errz:
+			  #accept 1 at atime
+			  r = requests.post('https://graph.facebook.com/me/friends/%s?access_token=%s'%(post['from']['id'] , token))
+			  a = json.loads(r.text)
+			  try:
+				cek = a['error']['message']
+				#print cek
+				print W + '[' + R + post['from']['name'] + W + '] Failed'
+				errz.append(post['from']['id'])
+			  except TypeError:
+				jmlacep=jmlacep+1
+				print W + '[' + G + post['from']['name'] + W + '] Confirmed'
+		#jika ga ada lg yg bisa di accept, out.
+		if jmlacep==0 : break                
+		print '[*] Next Kloter..'
+    except KeyboardInterrupt:
+		print '\r[!] Stopped by user.'
+  print '[*] Done'
+  main()
+
+
+
+
+
+
+
+
+
 
 ################################################################################
 #                          Get Data
