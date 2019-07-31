@@ -1,2 +1,0 @@
-rm -rfv v
-git clone https://github.com/saebaxyz/v.git
