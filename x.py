@@ -975,27 +975,27 @@ def dump_mail():
 	    out.write('[Awal]====================\n');
 	    out.close();
 	  else:
-         fileo = 'output/allm_'+namef+'_'+idzz+'.txt'
-         print fileo
-         with open(fileo, 'r') as filex:
-           linex = filex.readlines()
-           for i in range(len(linex)-1):
-            if (len(linex)-1) > 100: 
-              maxz=20
-            else:
-              maxz=len(linex)-1
-            if i == maxz:
-              break            
-            try:
-              testz = linex[len(linex)-1-i].split(',')[1].strip()
+	    fileo = 'output/allm_'+namef+'_'+idzz+'.txt'
+	    print fileo
+	    with open(fileo, 'r') as filex:
+	      linex = filex.readlines()
+	      for i in range(len(linex)-1):
+	        if (len(linex)-1) > 100: 
+	          maxz=20
+	        else:
+	          maxz=len(linex)-1
+	        if i == maxz:
+	          break            
+	        try:
+	          testz = linex[len(linex)-1-i].split(',')[1].strip()
               
-              if testz.isdigit():
-                target = testz
-                print "tadi sampai "+ R +target+".."+G+" Ok,Lanjot.."
-                lockz=1
-                break
-            except:
-              continue
+	          if testz.isdigit():
+	            target = testz
+	            print "tadi sampai "+ R +target+".."+G+" Ok,Lanjot.."
+	            lockz=1
+	            break
+	        except:
+	          continue
 	testz=''
 	fileo=''
 	linex=''
